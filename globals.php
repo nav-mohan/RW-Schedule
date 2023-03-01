@@ -1,4 +1,5 @@
 <?php
+require_once("/var/www/fm949.ca/wp-load.php");
 
 define('CUSTOM_POST_TYPE__RWSHOW', 'rwshow');
 define('CUSTOM_FIELD_KEY__SHOWHOST', '__showhost');
@@ -52,8 +53,7 @@ $ALL_DAYS_OF_WEEK = array(
 $ALL_TIMES_OF_DAY = array();
 for ($i = 0; $i <= 23; $i++) {
     $istr = str_pad($i, 2, '0', STR_PAD_LEFT);
-    array_push($ALL_TIMES_OF_DAY,"$istr:00:00","$istr:30:00");
+    array_push($ALL_TIMES_OF_DAY,"$istr:00","$istr:30");
 }
-
 
 ;?>

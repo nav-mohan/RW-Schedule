@@ -36,7 +36,7 @@ function render_custom_field__dayofweek(WP_Post $post) {
     
     echo "<option value = '' disabled hidden>Day of week</option>";
 
-    for ($i=0; $i < count($ALL_DAYS_OF_WEEK); $i++) { 
+    for ($i=1; $i <= 7; $i++) { 
         $dow = $ALL_DAYS_OF_WEEK[$i];
         if($dow==$the_dayofweek)
             echo "<option value = '$dow' selected>$dow</option>";

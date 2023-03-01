@@ -50,8 +50,6 @@ function render_custom_field__showhost(WP_Post $post) {
     }
     echo '</select>';
     
-
-
     // co-host-1
     echo '<br><br>';
 

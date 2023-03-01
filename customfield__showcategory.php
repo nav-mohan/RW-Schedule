@@ -36,7 +36,7 @@ function render_custom_field__showcategory(WP_Post $post) {
     
     echo "<option value = '' disabled hidden>Show Category</option>";
 
-    for ($i=0; $i < count($ALL_SHOW_CATEGORIES); $i++) { 
+    for ($i=1; $i <= count($ALL_SHOW_CATEGORIES); $i++) { 
         $showcategory_name = $ALL_SHOW_CATEGORIES[$i];
         if($showcategory_name==$the_showcategory)
             echo "<option value = '$showcategory_name' selected>$showcategory_name</option>";

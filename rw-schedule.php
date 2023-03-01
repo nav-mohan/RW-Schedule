@@ -20,6 +20,8 @@ include_once("customfield__dayofweek.php");
 include_once("customfield__showtime.php");
 include_once("assert-non-empty.php");
 // include_once("assert-unique.php");
+include_once("ajax-endpoints/ajax-rw-schedule-get-timetable.php");
+include_once("ajax-endpoints/ajax-rw-schedule-get-body.php");
 
 
 add_action('save_post_rwshow', 'on_save_post_rwshow',10,1);
@@ -47,17 +49,9 @@ function on_save_post_rwshow($post_id) {
 };
 
 
-/**
- * For the frontend (the fancy table), I have to make some changes to 
- * the class-Schedule. Specifically, I'll have to make it fetch from 
- * the wp_posts and wp_postmeta tables. 
- * The wp_posts table will contain the show-title and show-description
- * The wp_postmeta will contain the show-title, show-host-id, co-host-1-id, co-host-2-id, show-category, day-of-week, start-time, end-time, 
- */
-
-
-
-
+wp_enqueue_script('global_vars', get_template_directory_uri() . '/js/global-vars.js','','',false);
+wp_enqueue_script('ready_audio_player', get_template_directory_uri() . '/js/audio-player.js','','',false);
+wp_enqueue_script('get_schedule', plugin_dir_url( __FILE__) . 'js/ajax-rw-schedule-get-timetable.js','','',false);
 
 /**
  * To help debug this plugin I disabled wordpress's revision
@@ -75,3 +69,4 @@ function on_save_post_rwshow($post_id) {
  * So basically for debugging purposes I use this one-line SQL command. It's multiple commands spearated by ";"
  * select * from wp_postmeta;select ID,post_title,post_status,post_type,post_name,guid,post_parent from wp_posts; select ID,post_title,post_status,post_type,post_name,guid,post_parent from wp_posts where not (post_type = 'revision' or post_status='auto-draft');
  */
+

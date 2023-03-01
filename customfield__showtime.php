@@ -63,7 +63,7 @@ function render_custom_field__starttime(WP_Post $post) {
 
     echo '<select ' . $attributes . ' >';
     
-    echo "<option value = '' disabled hidden>End Time</option>";
+    echo "<option selected value = '' disabled hidden>End Time</option>";
 
     foreach($ALL_TIMES_OF_DAY as $end_time_24=>$end_time_12){
         if($end_time_24==$the_endtime)
@@ -74,6 +74,6 @@ function render_custom_field__starttime(WP_Post $post) {
     echo '</select>';
 
 
-    print_r($ALL_TIMES_OF_DAY);
+    // print_r($ALL_TIMES_OF_DAY);
 }
 

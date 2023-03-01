@@ -1,0 +1,30 @@
+#timetable{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.column{
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+}
+
+#timetable .column:nth-child(1){
+    flex-basis: 40%;
+    text-align: center;
+    align-items: center;
+}
+
+.row-header{
+    font-weight: 600;
+}
+
+
+
+.event{
+    border: 1px solid white;
+    background-color: aliceblue;
+    /* flex-basis: 50%; */
+}
